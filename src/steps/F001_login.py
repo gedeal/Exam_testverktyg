@@ -1,9 +1,8 @@
 
 from behave import given, when, then
-from src.pages.search_page import SearchPage
+#from src.pages.search_page import SearchPage
 
-import re
-import playwright
+#import re
 from playwright.sync_api import Page, expect, Playwright, sync_playwright
 from time import sleep
 
