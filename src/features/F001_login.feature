@@ -1,5 +1,5 @@
 
-Feature: login to page
+Feature: User logs in the start page
     *****  User can log in to the initial page  ******
 
     Scenario: User log in

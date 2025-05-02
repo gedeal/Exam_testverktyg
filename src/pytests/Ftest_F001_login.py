@@ -1,10 +1,13 @@
 
+import re
+from asyncio import timeout
+
 from behave import given, when, then
 from playwright.sync_api import Page, expect, Playwright, sync_playwright
 from time import sleep
 
 
-@given(u'User chooses the initial page')
+@given(u'User chooses the initial page2')
 
 def test_has_title(context):
     context.page.goto(context.base_url)  
@@ -14,7 +17,7 @@ def test_has_title(context):
     expect(context.page.get_by_text('Sidan för dig som gillar att läsa')).to_be_visible()
     sleep(0)
 
-@when(u'User browse the button options')
+@when(u'User browse the button options2')
 def check_buttons(context):
 
     context.page.get_by_test_id("add-book").click()
@@ -27,7 +30,7 @@ def check_buttons(context):
     sleep(0)
 
 
-@then(u'first page is show')
+@then(u'first page is show2')
 def see_first_page(context):
 
     context.page.get_by_test_id("catalog").click()
