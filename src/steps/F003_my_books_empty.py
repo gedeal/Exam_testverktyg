@@ -29,6 +29,6 @@ def list_empty(context):
 def control_catalog(context):
     context.page.get_by_test_id("catalog").click()
 
-    pagecatalog = context.page.locator('.star selected');
+    pagecatalog = context.page.locator('.star selected')
     expect(pagecatalog).to_be_hidden();
     sleep(1)

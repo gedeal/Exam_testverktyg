@@ -20,7 +20,7 @@ def test_login(context) -> None:
  #  expect(page.get_by_text('Sidan för dig som gillar att läsa')).to_be_visible()
  
 
-    sleep(1)
+    sleep(0)
 
 def test_list(context) -> None:
     
@@ -36,5 +36,5 @@ def test_list(context) -> None:
     expect(page.get_by_text('Sidan för dig som gillar att läsa')).to_be_visible()
  
 
-    sleep(1)
+    sleep(0)
 

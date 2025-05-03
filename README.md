@@ -39,10 +39,15 @@ See : [STORIES.md](STORIES.md)
 -----
 
 # Tips 
+### Use print commands
+behave captures stdout by default. To see raw print() output, disable capturing:
+
+    behave --no-capture
+
 ### väntetid på testet
 
     from time import sleep
-    .
+    :
     sleep(0)
 
 ### välj mellan n:te platser

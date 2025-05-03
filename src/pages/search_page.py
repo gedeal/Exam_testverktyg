@@ -22,3 +22,6 @@ class SearchPage:
         sleep(0)
 
 
+    def console_out(txt):
+        print(txt)
+        

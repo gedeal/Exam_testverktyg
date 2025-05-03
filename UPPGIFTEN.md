@@ -44,9 +44,8 @@ Skriv ner dessa i STORIES.md.
 - Ta fram feature-filer utifrån dina user stories.
 - Bygg step-filer för alla features. Page-filer vid behov.
 - Skriv ner 
-  1) vad du har testat 
-  2) hur man startar projektet, i README.md. 
-  3) Nu kan du lämna in! 
+
+    - Nu kan du lämna in! 
  
 # Inlämning
   Skapa en textfil "exam1_mitt_namn.txt" som innehåller länk till ditt 
@@ -91,3 +90,11 @@ fler än två gånger.
 - Kom ihåg att testa att alla vyer gör det de ska, och att navigeringen fungerar.
 
 
+-----
+
+# Examinationsdatum
+TAP HT24D
+Testverktyg
+Ordinarie inlämning: 2025-05-11
+Komplettering 1: 2025-06-01
+Komplettering 2: 2025-06-15
