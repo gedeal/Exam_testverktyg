@@ -1,14 +1,14 @@
 
 
 
-#  Vad jag har testat
+#  What I have tested
 
-[Se STORIES.md](STORIES.md)
+See : [STORIES.md](STORIES.md)
 
 
-# hur startar projektet
+# How to start the project
 
-### Installera verktyger
+### Install tools
 
     python.exe -m pip install --upgrade pip
     pip install pytest-playwright
@@ -16,17 +16,29 @@
     pip install behave
 
 
-# Användbara kommandon:
+# Usefull commands:
 
-## Kör test
-    clear | behave .\src
+## Run behave test
+- Run all tests
 
-    clear | behave .\src\features\F001_login.feature 
+        clear | behave .\src
 
-    playwright codegen  "https://tap-ht24-testverktyg.github.io/exam-template/"
+- Run specific test
+
+        clear | behave src\features\F001_login.feature 
+
+## Run pytests
+
+        clear | pytest -v       
+        
+## Run codegen
+
+        playwright codegen  "https://tap-ht24-testverktyg.github.io/exam-template/"
 
 
-## Tips 
+-----
+
+# Tips 
 ### väntetid på testet
 
     from time import sleep
