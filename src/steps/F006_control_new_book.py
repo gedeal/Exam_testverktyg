@@ -19,8 +19,8 @@ def add_book(context, book, author):
     context.page.get_by_test_id("add-book").click()
     expect(context.page.get_by_text(" Sidan för dig som gillar att läsa. Välj dina favoriter")).to_be_visible()
 
-    context.page.get_by_test_id("add-input-title").fill(f"{book}");
-    context.page.get_by_test_id("add-input-author").fill(f"{author}");
+    context.page.get_by_test_id("add-input-title").fill(f"{book}")
+    context.page.get_by_test_id("add-input-author").fill(f"{author}")
 
     print (f"Book :---->   {book}")
     print (f"author:---->   {author}")
@@ -31,14 +31,14 @@ def add_book(context, book, author):
 
 @then(u'the "{book}" and "{author}"  shows in the list')
 def control_add_book(context, book, author):
-    context.page.get_by_test_id("catalog").click();
+    context.page.get_by_test_id("catalog").click()
     expect(context.page.get_by_text(f'"{book}", {author}')).to_be_visible()
     sleep(0)
 
 
 #--------------------------------------
 
-@Given(u'User control the page info for "{mark_book}"')
+@given(u'User control the page info for "{mark_book}"')
 def step_impl(context, mark_book):
     sleep(0)
     expect(context.page.get_by_text(f'"{mark_book}"')).to_be_visible()
@@ -74,8 +74,8 @@ def control_unmarked(context,unmark_book):
     expect(element).not_to_have_class('star selected')
 
 # control remaining marked book
-    context.page.get_by_test_id("add-book").click();
-    context.page.get_by_test_id("catalog").click();
+    context.page.get_by_test_id("add-book").click()
+    context.page.get_by_test_id("catalog").click()
 
     markedelement = context.page.get_by_test_id('star-Min katt är min chef')
     expect(markedelement).to_have_class('star selected')

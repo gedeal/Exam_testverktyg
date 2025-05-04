@@ -18,13 +18,13 @@ def choose_catalog(context):
 
 @when(u'There is more then 0 books in the list')
 def books_in_list(context):
-    pagecatalog = context.page.locator('.book');
+    pagecatalog = context.page.locator('.book')
     expect(pagecatalog).not_to_have_count(0)
 
 @then(u'User verify number of books in catalog')
 def nr_of_bookd(context):
 
-    count = context.page.locator('.book').count();
+    count = context.page.locator('.book').count()
 #   Print informations
     print(f'\n  ****TEST**** There are {count} books in the list')
 
