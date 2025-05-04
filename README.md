@@ -21,11 +21,11 @@ See : [STORIES.md](STORIES.md)
 ## Run behave test
 - Run all tests
 
-        clear | behave .\src
+        clear | behave .\src --no-capture
 
 - Run specific test
 
-        clear | behave src\features\F001_login.feature 
+        clear | behave src\features\F001_login.feature  --no-capture
 
 ## Run pytests
 
@@ -39,10 +39,15 @@ See : [STORIES.md](STORIES.md)
 -----
 
 # Tips 
+### Use print commands
+behave captures stdout by default. To see raw print() output, disable capturing:
+
+    behave --no-capture
+
 ### väntetid på testet
 
     from time import sleep
-    .
+    :
     sleep(0)
 
 ### välj mellan n:te platser
