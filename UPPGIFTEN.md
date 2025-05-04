@@ -57,20 +57,20 @@ Skriv ner dessa i STORIES.md.
 ----------------
 
 # För G krävs
-A) Det finns user stories som täcker all funktionalitet.
++A) Det finns user stories som täcker all funktionalitet.
 
-B) Alla user stories har minst en feature. Alla features har minst ett scenario.
++B) Alla user stories har minst en feature. Alla features har minst ett scenario.
 
-C) Det går att starta ditt projekt, efter instruktionerna du har skrivit i README.md.
++C) Det går att starta ditt projekt, efter instruktionerna du har skrivit i README.md.
 
-D) Alla test är gröna.
++D) Alla test är gröna.
 
 # För VG krävs
 E) Högre kvalitet och kod som återanvänds.
 
 F) Du använder designmönstret Page Object.
 
-G) Du använder Scenario Outline.
++G) Du använder Scenario Outline.
 
 H) Dina features försöker täcka alla meningsfulla möjligheter för 
 motsvarande user story.

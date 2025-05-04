@@ -21,11 +21,11 @@ See : [STORIES.md](STORIES.md)
 ## Run behave test
 - Run all tests
 
-        clear | behave .\src
+        clear | behave .\src --no-capture
 
 - Run specific test
 
-        clear | behave src\features\F001_login.feature 
+        clear | behave src\features\F001_login.feature  --no-capture
 
 ## Run pytests
 

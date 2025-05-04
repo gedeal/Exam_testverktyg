@@ -7,7 +7,7 @@ Feature: Control the catalog content
         When  User control "<book>" on the list
         Then  "<book>" in the list is market correct
 
-        Examples:
+        Examples: Books
             | book                                                 |
             | Hur man tappar bort sin TV-fjärr 10 gånger om dagen  |
             | Kaffekokaren som visste för mycket                   |

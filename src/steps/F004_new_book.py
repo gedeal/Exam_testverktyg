@@ -6,7 +6,7 @@ from time import sleep
 
 @given(u'User chooses \'Add a book\'')
 def login_add_book(context):
-    context.page.goto(context.base_url)  
+    #context.page.goto(context.base_url)  
     context.page.get_by_role("heading", name="Läslistan")
     expect(context.page.get_by_role("heading", name="Välkommen!")).to_be_visible()    
 

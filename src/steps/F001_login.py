@@ -7,7 +7,7 @@ from time import sleep
 @given(u'User chooses the initial page')
 
 def test_has_title(context):
-    context.page.goto(context.base_url)  
+   # context.page.goto(context.base_url)  
 
     context.page.get_by_role("heading", name="Läslistan")
     expect(context.page.get_by_role("heading", name="Välkommen!")).to_be_visible()

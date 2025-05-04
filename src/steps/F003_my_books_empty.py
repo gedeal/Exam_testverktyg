@@ -22,7 +22,7 @@ def choos_my_books(context):
 @then(u'user has no book in list')
 def list_empty(context):
     expect(context.page.get_by_text("Sidan för dig som gillar att")).to_be_visible()
-    expect(context.page.get_by_text("När du valt, kommer dina")).to_be_visible()
+    expect(context.page.get_by_text("När du valt, kommer dina favoritböcker att visas här.")).to_be_visible()
     sleep(0)
 
 @then(u'there is no booked marked in the catalog')
@@ -31,4 +31,4 @@ def control_catalog(context):
 
     pagecatalog = context.page.locator('.star selected')
     expect(pagecatalog).to_be_hidden();
-    sleep(1)
+    sleep(0)

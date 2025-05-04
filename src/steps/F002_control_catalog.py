@@ -5,7 +5,7 @@ from time import sleep
 
 @given(u'User veryfy if the right page shows')
 def step_control_right_page(context):
-    context.page.goto(context.base_url)  
+  #  context.page.goto(context.base_url)  
     context.page.get_by_role("heading", name="Läslistan")
 
     expect(context.page.get_by_role("heading", name="Välkommen!")).to_be_visible()
@@ -13,17 +13,13 @@ def step_control_right_page(context):
 
 @when(u'User control "{book}" on the list')
 def control_list(context, book):
-   # print (f"Book:---->   {book}")
     expect(context.page.get_by_text(f"{book}")).to_be_visible()
     sleep(0)
 
 @then(u'"{book}" in the list is market correct')
 def control_book_not_selected(context, book):
- #   print (f"Book 2:---->   {book}")
-    #context.page.get_by_text("star-Jag trodde det var tisdag")
     bookstring =(f"star-{book}")
 
- #   print (f"Book 3:---->   {bookstring}")
     locator = context.page.get_by_test_id(bookstring)
     expect(locator).not_to_have_class("star selected")
     locator.click()
