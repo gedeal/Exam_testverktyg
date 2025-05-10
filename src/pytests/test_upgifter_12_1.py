@@ -1,8 +1,6 @@
 import re
-from asyncio import timeout
+from playwright.sync_api import Page, expect, Playwright, sync_playwright
 from time import sleep
-
-from playwright.sync_api import Page, Playwright, sync_playwright, expect
 
 
 def test_login(context) -> None:
@@ -36,5 +34,14 @@ def test_list(context) -> None:
     expect(page.get_by_text('Sidan för dig som gillar att läsa')).to_be_visible()
  
 
+    page.get_by_test_id("add-book").click()
+    expect(page.get_by_text('Titel')).to_be_visible()
+    expect(page.get_by_text('Författare')).to_be_visible()
+
+    page.get_by_test_id("favorites").click()
+    expect(page.get_by_text("Sidan för dig som gillar att läsa. Välj dina favoriter.")).to_be_visible()
+    sleep(0)
+
+    expect(page.get_by_text("När du valt, kommer dina favoritböcker att visas här.")).to_be_visible()
     sleep(0)
 

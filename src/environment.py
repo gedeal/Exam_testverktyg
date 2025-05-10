@@ -4,7 +4,7 @@ from time import sleep
 def before_all (context):
     context.playwright = sync_playwright().start()
     context.browser_type = context.playwright.chromium
-
+    
     #context.browser = context.browser_type.launch(headless=False,slow_mo=200)
     context.browser = context.browser_type.launch(headless=True)    ## No browser
 

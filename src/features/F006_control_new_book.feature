@@ -6,14 +6,11 @@ Feature: User add new books in 'My list' and control the inclusion
         When  User adds "<book>" and "<author>" in the list
         Then  the "<book>" and "<author>"  shows in the list
 
-
         Examples: Add books
             | book           | author               |
             | I was not here | Phanton of the Opera |
             | X-man | Marvel |
  
-
-
     Scenario Outline: User marks "<mark_book>" in the list
         Given User control the page info for "<mark_book>"
         When  User marks book: "<mark_book>" in the list

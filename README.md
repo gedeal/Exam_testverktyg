@@ -1,10 +1,6 @@
-
-
-
 #  What I have tested
 
 See : [STORIES.md](STORIES.md)
-
 
 # How to start the project
 
@@ -21,15 +17,15 @@ See : [STORIES.md](STORIES.md)
 ## Run behave test
 - Run all tests
 
-        clear | behave .\src --no-capture
+        clear | behave .\src --no-capture 
 
 - Run specific test
 
-        clear | behave src\features\F001_login.feature  --no-capture
+        clear | behave src\features\F001_login.feature  --no-capture 
 
 ## Run pytests
 
-        clear | pytest -v       
+        clear | pytest -v 
         
 ## Run codegen
 
@@ -39,16 +35,20 @@ See : [STORIES.md](STORIES.md)
 -----
 
 # Tips 
+### Clear terminal
+    clear   # =>  VScode / PyCharm
+    cls     # =>  Intellij
+
 ### Use print commands
 behave captures stdout by default. To see raw print() output, disable capturing:
 
     behave --no-capture
 
-### väntetid på testet
+### delay time inside test
 
     from time import sleep
     :
-    sleep(0)
+    sleep(1)   # 1 sec
 
-### välj mellan n:te platser
+### choose the nth: place
     context.page.get_by_role("textbox").nth(1).fill("EMAIL")

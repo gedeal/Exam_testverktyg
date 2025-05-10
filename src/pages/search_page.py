@@ -21,7 +21,24 @@ class SearchPage:
         self.page.get_by_role(type, name=txt).click()
         sleep(0)
 
+    def favorites(self):
+        self.page.get_by_test_id("favorites").click()
+        expect(self.page.get_by_text("Sidan för dig som gillar att läsa. Välj dina favoriter.")).to_be_visible()
+        sleep(0)
+
 
     def console_out(txt):
         print(txt)
+
+class LoginPage:
+    def startpage(self):
+        self.page.get_by_role("heading", name="Läslistan")
+        expect(self.page.get_by_role("heading", name="Välkommen!")).to_be_visible()  
+        expect(self.page.get_by_text('Sidan för dig som gillar att läsa. Välj dina favoriter.')).to_be_visible()
+  
+        sleep(0)  
+
+    def catalogpage(self):   
+        self.page.get_by_test_id("catalog").click()
+        expect(self.page.get_by_text('Sidan för dig som gillar att läsa. Välj dina favoriter.')).to_be_visible()
         

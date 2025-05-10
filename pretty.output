@@ -1,0 +1,111 @@
+Feature: Testing printouts # src/features/F000_printout.feature:2
+  *****  Behave can print out info  ******
+  Scenario: User log in and print out info      # src/features/F000_printout.feature:5
+    Given User logs to initial page             # src/steps/F000_printout.py:8
+    When There is more then 0 books in the list # src/steps/F000_printout.py:12
+    Then User verify number of books in catalog # src/steps/F000_printout.py:17
+
+Feature: User logs in the start page # src/features/F001_login.feature:2
+  *****  User can log in to the initial page  ******
+  Scenario: User log in                 # src/features/F001_login.feature:5
+    Given User chooses the initial page # src/steps/F001_login.py:7
+    When User browse the button options # src/steps/F001_login.py:13
+    Then first page is show             # src/steps/F001_login.py:24
+
+Feature: Control the catalog content # src/features/F002_control_catalog.feature:2
+  *****  User control the catalog content  ******
+  Scenario Outline: User is logged and control the catalog content -- @1.1 Books             # src/features/F002_control_catalog.feature:12
+    Given User veryfy if the right page shows                                                # src/steps/F002_control_catalog.py:6
+    When User control "Hur man tappar bort sin TV-fjärr 10 gånger om dagen" on the list      # src/steps/F002_control_catalog.py:11
+    Then "Hur man tappar bort sin TV-fjärr 10 gånger om dagen" in the list is market correct # src/steps/F002_control_catalog.py:16
+
+  Scenario Outline: User is logged and control the catalog content -- @1.2 Books  # src/features/F002_control_catalog.feature:13
+    Given User veryfy if the right page shows                                     # src/steps/F002_control_catalog.py:6
+    When User control "Kaffekokaren som visste för mycket" on the list            # src/steps/F002_control_catalog.py:11
+    Then "Kaffekokaren som visste för mycket" in the list is market correct       # src/steps/F002_control_catalog.py:16
+
+  Scenario Outline: User is logged and control the catalog content -- @1.3 Books  # src/features/F002_control_catalog.feature:14
+    Given User veryfy if the right page shows                                     # src/steps/F002_control_catalog.py:6
+    When User control "Min katt är min chef" on the list                          # src/steps/F002_control_catalog.py:11
+    Then "Min katt är min chef" in the list is market correct                     # src/steps/F002_control_catalog.py:16
+
+  Scenario Outline: User is logged and control the catalog content -- @1.4 Books  # src/features/F002_control_catalog.feature:15
+    Given User veryfy if the right page shows                                     # src/steps/F002_control_catalog.py:6
+    When User control "100 sätt att undvika måndagar" on the list                 # src/steps/F002_control_catalog.py:11
+    Then "100 sätt att undvika måndagar" in the list is market correct            # src/steps/F002_control_catalog.py:16
+
+  Scenario Outline: User is logged and control the catalog content -- @1.5 Books   # src/features/F002_control_catalog.feature:16
+    Given User veryfy if the right page shows                                      # src/steps/F002_control_catalog.py:6
+    When User control "Gräv där du står – och hitta en pizzameny" on the list      # src/steps/F002_control_catalog.py:11
+    Then "Gräv där du står – och hitta en pizzameny" in the list is market correct # src/steps/F002_control_catalog.py:16
+
+  Scenario Outline: User is logged and control the catalog content -- @1.6 Books  # src/features/F002_control_catalog.feature:17
+    Given User veryfy if the right page shows                                     # src/steps/F002_control_catalog.py:6
+    When User control "Jag trodde det var tisdag" on the list                     # src/steps/F002_control_catalog.py:11
+    Then "Jag trodde det var tisdag" in the list is market correct                # src/steps/F002_control_catalog.py:16
+
+  Scenario Outline: User is logged and control the catalog content -- @1.7 Books                    # src/features/F002_control_catalog.feature:18
+    Given User veryfy if the right page shows                                                       # src/steps/F002_control_catalog.py:6
+    When User control "Att prata med växter – och vad de egentligen tycker om dig" on the list      # src/steps/F002_control_catalog.py:11
+    Then "Att prata med växter – och vad de egentligen tycker om dig" in the list is market correct # src/steps/F002_control_catalog.py:16
+
+Feature: My books list - empty # src/features/F003_my_books_empty.feature:2
+  *****  User controls if his book list is enmpty  ******
+  Scenario: User log in to my book list           # src/features/F003_my_books_empty.feature:5
+    Given User logs in                            # src/steps/F003_my_books_empty.py:7
+    When User chooses the my book list            # src/steps/F003_my_books_empty.py:11
+    Then there is no booked marked in the catalog # src/steps/F003_my_books_empty.py:15
+
+Feature: Add a new book in list # src/features/F004_new_book.feature:2
+  *****  User adds a new book in his list and see it in the catalog  ******
+  Scenario: Add a new book in list          # src/features/F004_new_book.feature:5
+    Given User chooses 'Add a book'         # src/steps/F004_new_book.py:7
+    When adds Title                         # src/steps/F004_new_book.py:12
+    And adds writer                         # src/steps/F004_new_book.py:19
+    Then add the new book                   # src/steps/F004_new_book.py:25
+    And control if added book is in catalog # src/steps/F004_new_book.py:30
+
+Feature: Choose a book # src/features/F005_choose_book.feature:2
+  *****  User can choose a book in the catalog ******
+  Scenario: User chooses a book              # src/features/F005_choose_book.feature:5
+    Given User chooses catalog page          # src/steps/F005_choose_book.py:11
+    When book list is shown                  # src/steps/F005_choose_book.py:16
+    Then the chosen book exist in the list   # src/steps/F005_choose_book.py:24
+    And user chooses the book                # src/steps/F005_choose_book.py:30
+    And marking is permanent visible in list # src/steps/F005_choose_book.py:38
+
+Feature: User add new books in 'My list' and control the inclusion # src/features/F006_control_new_book.feature:1
+  *****  User can add and see the books list   ******
+  Scenario Outline: User add books in the list -- @1.1 Add books            # src/features/F006_control_new_book.feature:11
+    Given User is on the 'Läslistan' login page                             # src/steps/F006_control_new_book.py:8
+    When User adds "I was not here" and "Phanton of the Opera" in the list  # src/steps/F006_control_new_book.py:12
+    Then the "I was not here" and "Phanton of the Opera"  shows in the list # src/steps/F006_control_new_book.py:27
+
+  Scenario Outline: User add books in the list -- @1.2 Add books  # src/features/F006_control_new_book.feature:12
+    Given User is on the 'Läslistan' login page                   # src/steps/F006_control_new_book.py:8
+    When User adds "X-man" and "Marvel" in the list               # src/steps/F006_control_new_book.py:12
+    Then the "X-man" and "Marvel"  shows in the list              # src/steps/F006_control_new_book.py:27
+
+  Scenario Outline: User marks "Hur man tappar bort sin TV-fjärr 10 gånger om dagen" in the list -- @1.1 Marked books  # src/features/F006_control_new_book.feature:21
+    Given User control the page info for "Hur man tappar bort sin TV-fjärr 10 gånger om dagen"                         # src/steps/F006_control_new_book.py:35
+    When User marks book: "Hur man tappar bort sin TV-fjärr 10 gånger om dagen" in the list                            # src/steps/F006_control_new_book.py:41
+    Then "Hur man tappar bort sin TV-fjärr 10 gånger om dagen" is market correct                                       # src/steps/F006_control_new_book.py:47
+
+  Scenario Outline: User marks "Min katt är min chef" in the list -- @1.2 Marked books  # src/features/F006_control_new_book.feature:22
+    Given User control the page info for "Min katt är min chef"                         # src/steps/F006_control_new_book.py:35
+    When User marks book: "Min katt är min chef" in the list                            # src/steps/F006_control_new_book.py:41
+    Then "Min katt är min chef" is market correct                                       # src/steps/F006_control_new_book.py:47
+
+  Scenario Outline: User marks "I was not here" in the list -- @1.3 Marked books  # src/features/F006_control_new_book.feature:23
+    Given User control the page info for "I was not here"                         # src/steps/F006_control_new_book.py:35
+    When User marks book: "I was not here" in the list                            # src/steps/F006_control_new_book.py:41
+    Then "I was not here" is market correct                                       # src/steps/F006_control_new_book.py:47
+
+  Scenario Outline: User unmark books in the list -- @1.1 Remove marked books                   # src/features/F006_control_new_book.feature:31
+    Given User unmarked book: "Hur man tappar bort sin TV-fjärr 10 gånger om dagen" in the list # src/steps/F006_control_new_book.py:55
+    Then "Hur man tappar bort sin TV-fjärr 10 gånger om dagen"  is market correct               # src/steps/F006_control_new_book.py:61
+
+  Scenario Outline: User unmark books in the list -- @1.2 Remove marked books  # src/features/F006_control_new_book.feature:32
+    Given User unmarked book: "I was not here" in the list                     # src/steps/F006_control_new_book.py:55
+    Then "I was not here"  is market correct                                   # src/steps/F006_control_new_book.py:61
+
