@@ -1,5 +1,5 @@
 from behave import given, when, then
-from playwright.sync_api import Page, expect, Playwright, sync_playwright
+from playwright.sync_api import expect, Playwright, sync_playwright
 from time import sleep
 
 from src.pages.search_page import SearchPage, LoginPage

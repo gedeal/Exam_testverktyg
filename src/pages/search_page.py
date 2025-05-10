@@ -31,6 +31,9 @@ class SearchPage:
         print(txt)
 
 class LoginPage:
+    def __init__(self, page):
+        self.page = page
+
     def startpage(self):
         self.page.get_by_role("heading", name="Läslistan")
         expect(self.page.get_by_role("heading", name="Välkommen!")).to_be_visible()  

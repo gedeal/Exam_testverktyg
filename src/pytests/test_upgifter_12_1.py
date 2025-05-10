@@ -1,5 +1,5 @@
-import re
-from playwright.sync_api import Page, expect, Playwright, sync_playwright
+
+from playwright.sync_api import expect
 from time import sleep
 
 
