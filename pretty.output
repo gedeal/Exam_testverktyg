@@ -1,9 +1,9 @@
 Feature: Testing printouts # src/features/F000_printout.feature:2
   *****  Behave can print out info  ******
   Scenario: User log in and print out info      # src/features/F000_printout.feature:5
-    Given User logs to initial page             # src/steps/F000_printout.py:8
-    When There is more then 0 books in the list # src/steps/F000_printout.py:12
-    Then User verify number of books in catalog # src/steps/F000_printout.py:17
+    Given User logs to initial page             # src/steps/F000_printout.py:7
+    When There is more then 0 books in the list # src/steps/F000_printout.py:11
+    Then User verify number of books in catalog # src/steps/F000_printout.py:16
 
 Feature: User logs in the start page # src/features/F001_login.feature:2
   *****  User can log in to the initial page  ******
