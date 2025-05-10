@@ -1,15 +1,12 @@
 from behave import given, when, then
 from playwright.sync_api import Page, expect, Playwright, sync_playwright
 from time import sleep
-
+from src.pages.search_page import SearchPage, LoginPage
 
 @given(u'User veryfy if the right page shows')
 def step_control_right_page(context):
   #  context.page.goto(context.base_url)  
-    context.page.get_by_role("heading", name="Läslistan")
-
-    expect(context.page.get_by_role("heading", name="Välkommen!")).to_be_visible()
-    expect(context.page.get_by_text("Sidan för dig som gillar att")).to_be_visible()
+    LoginPage.startpage(context)
 
 @when(u'User control "{book}" on the list')
 def control_list(context, book):

@@ -1,18 +1,13 @@
 from behave import given, when, then
-from playwright.sync_api import Page, expect, Playwright, sync_playwright
+from playwright.sync_api import expect, Playwright, sync_playwright
 from time import sleep
 
-from src.pages.search_page import SearchPage
+from src.pages.search_page import SearchPage, LoginPage
 
-
+#     Scenario Outline: User add books in the list  ------------
 @given(u'User is on the \'Läslistan\' login page')
 def choose_catalog(context):
-    #context.page.goto(context.base_url)    # Reset page
-
-    context.page.get_by_role("heading", name="Läslistan")
-    expect(context.page.get_by_role("heading", name="Välkommen!")).to_be_visible()    
-
-    sleep(0)
+    LoginPage.startpage(context)
 
 @when(u'User adds "{book}" and "{author}" in the list')
 def add_book(context, book, author):
@@ -25,19 +20,18 @@ def add_book(context, book, author):
     print (f"Book :---->   {book}")
     print (f"author:---->   {author}")
     context.page.get_by_test_id("add-submit").click()
-    context.page.get_by_test_id("favorites").click()
-    sleep(0)
-
+    
+    SearchPage.favorites(context)
+  
 
 @then(u'the "{book}" and "{author}"  shows in the list')
 def control_add_book(context, book, author):
-    context.page.get_by_test_id("catalog").click()
+    LoginPage.catalogpage(context)
     expect(context.page.get_by_text(f'"{book}", {author}')).to_be_visible()
     sleep(0)
 
 
-#--------------------------------------
-
+#   Scenario Outline: User marks "<mark_book>" in the list ---------
 @given(u'User control the page info for "{mark_book}"')
 def step_impl(context, mark_book):
     sleep(0)
@@ -57,9 +51,7 @@ def step_impl(context, mark_book):
     expect(element).to_have_class('star selected')
     sleep(0)
 
-# ------------------------------
-
-
+#     Scenario Outline: User unmark books in the list -------------
 @given(u'User unmarked book: "{unmark_book}" in the list')
 def unmark_books(context,unmark_book):
     book = 'star-'+(f'{unmark_book}')
@@ -75,7 +67,7 @@ def control_unmarked(context,unmark_book):
 
 # control remaining marked book
     context.page.get_by_test_id("add-book").click()
-    context.page.get_by_test_id("catalog").click()
+    LoginPage.catalogpage(context)
 
     markedelement = context.page.get_by_test_id('star-Min katt är min chef')
     expect(markedelement).to_have_class('star selected')

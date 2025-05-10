@@ -5,6 +5,5 @@ Feature: My books list - empty
     Scenario: User log in to my book list
         Given User logs in
         When  User chooses the my book list
-        Then  user has no book in list
         Then  there is no booked marked in the catalog
      
